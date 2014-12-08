@@ -54,7 +54,7 @@ class UploadedFileField(types.TypeDecorator):
     def process_result_value(self, value, dialect):
         if not value:
             return None
-        return self._upload_type.decode(value)
+        return self._upload_type.decode(unicode(value))
 
 
 class _SQLAMutationTracker(object):
